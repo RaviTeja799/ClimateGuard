@@ -53,8 +53,8 @@ ClimateGuard is a **multi-agent AI system** built with Google's Agent Developmen
 
 ## 🛠️ ADK Concepts Demonstrated
 
-| Concept | Implementation | Points |
-|---------|----------------|--------|
+| Concept | Implementation |
+|---------|----------------|
 | ✅ Multi-Agent System | 5 specialized agents with supervisor orchestration |
 | ✅ Custom Tools | Carbon calculation, community search, offset finder | 
 | ✅ Memory Service | InMemoryMemoryService with user profile persistence | 
