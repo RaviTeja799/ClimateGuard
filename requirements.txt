@@ -1,0 +1,39 @@
+# ClimateGuard - Personal Carbon Footprint Coach
+# Google AI Agents Intensive Capstone Project
+
+# Core ADK Framework
+google-adk>=1.2.0
+
+# Google AI / Vertex AI
+google-genai>=0.7.0
+vertexai>=1.0.0
+
+# API Requests
+requests>=2.31.0
+aiohttp>=3.9.0
+
+# Data Processing & Visualization
+pandas>=2.0.0
+matplotlib>=3.7.0
+numpy>=1.24.0
+
+# Environment & Configuration
+python-dotenv>=1.0.0
+
+# Database for Sessions
+sqlalchemy>=2.0.0
+
+# Observability & Logging
+opentelemetry-instrumentation-google-genai>=0.1.0
+
+# A2A Communication (optional)
+uvicorn>=0.24.0
+fastapi>=0.104.0
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Jupyter/Notebook support
+ipykernel>=6.25.0
+jupyter>=1.0.0
