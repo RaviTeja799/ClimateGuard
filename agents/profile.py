@@ -234,7 +234,7 @@ class ProfileAgent:
     Handles user onboarding through conversational profiling.
     """
     
-    def __init__(self, model_name: str = "gemini-2.5-flash-lite"):
+    def __init__(self, model_name: str = "gemini-2.0-flash"):
         """
         Initialize the Profile Agent.
         
@@ -257,7 +257,7 @@ class ProfileAgent:
 # ============================================================================
 # AGENT FACTORY
 # ============================================================================
-def create_profile_agent(model_name: str = "gemini-2.5-flash-lite") -> LlmAgent:
+def create_profile_agent(model_name: str = "gemini-2.0-flash") -> LlmAgent:
     """
     Create the Profile Agent for user onboarding.
     

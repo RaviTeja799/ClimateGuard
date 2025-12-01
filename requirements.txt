@@ -24,7 +24,7 @@ python-dotenv>=1.0.0
 sqlalchemy>=2.0.0
 
 # Observability & Logging
-opentelemetry-instrumentation-google-genai>=0.1.0
+# opentelemetry-instrumentation-google-genai>=0.1.0  # Commented out - version not available
 
 # A2A Communication (optional)
 uvicorn>=0.24.0

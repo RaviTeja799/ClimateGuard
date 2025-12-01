@@ -94,22 +94,24 @@ class ClimateGuardCLI:
             parts=[types.Part(text=query)]
         )
         
-        response_text = None
+        response_text = ""
         async for event in self.runner.run_async(
             user_id=self.user_id,
             session_id=self.session_id,
             new_message=query_content
         ):
-            if event.is_final_response() and event.content and event.content.parts:
-                for part in event.content.parts:
-                    if hasattr(part, 'text') and part.text:
-                        response_text = part.text
+            # Collect response text from all events (matching notebook approach)
+            if hasattr(event, 'content') and event.content:
+                if hasattr(event.content, 'parts'):
+                    for part in event.content.parts:
+                        if hasattr(part, 'text') and part.text:
+                            response_text += part.text
         
         # Track response
         duration_ms = (datetime.now() - start_time).total_seconds() * 1000
         self.tracker.on_query(self.session_id, query, duration_ms)
         
-        return response_text or "I'm sorry, I couldn't process that request."
+        return response_text.strip() or "I'm sorry, I couldn't process that request."
     
     async def run_interactive(self):
         """Run interactive chat loop."""

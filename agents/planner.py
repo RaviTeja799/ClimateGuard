@@ -248,6 +248,15 @@ def generate_weekly_plan(
                 if action_level <= max_level:
                     available_actions.append(action)
     
+    # Check if we have any actions available
+    if not available_actions:
+        return {
+            "status": "error",
+            "message": f"No actions found for focus areas {focus_areas} with difficulty '{difficulty_max}'. Try different criteria.",
+            "daily_plan": {},
+            "total_weekly_savings_kg": 0,
+        }
+    
     # Select actions to meet target
     selected_actions = []
     total_savings = 0
@@ -493,7 +502,7 @@ class PlannerAgent:
     Generates and tracks weekly carbon reduction plans.
     """
     
-    def __init__(self, model_name: str = "gemini-2.5-flash-lite"):
+    def __init__(self, model_name: str = "gemini-2.0-flash"):
         """
         Initialize the Planner Agent.
         
@@ -516,7 +525,7 @@ class PlannerAgent:
 # ============================================================================
 # AGENT FACTORY
 # ============================================================================
-def create_planner_agent(model_name: str = "gemini-2.5-flash-lite") -> LlmAgent:
+def create_planner_agent(model_name: str = "gemini-2.0-flash") -> LlmAgent:
     """
     Create the Planner Agent for weekly plan generation.
     

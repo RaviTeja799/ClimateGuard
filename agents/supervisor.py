@@ -181,7 +181,7 @@ class SupervisorAgent:
     - Community Agent: Social features
     """
     
-    def __init__(self, model_name: str = "gemini-2.5-flash-lite"):
+    def __init__(self, model_name: str = "gemini-2.0-flash"):
         """
         Initialize the Supervisor Agent with all sub-agents.
         
@@ -219,7 +219,7 @@ class SupervisorAgent:
 # AGENT FACTORY
 # ============================================================================
 def create_supervisor_agent(
-    model_name: str = "gemini-2.5-flash-lite",
+    model_name: str = "gemini-2.0-flash",
     profile_agent: LlmAgent = None,
     calculator_agent: LlmAgent = None,
     planner_agent: LlmAgent = None,
@@ -324,9 +324,11 @@ You: [Delegate to planner_agent for quick action]
 
 1. ALWAYS check user_status first to understand context
 2. Delegate to specialists - don't try to do their job
-3. Summarize key learnings at end of important sessions
-4. Be conversational, not robotic
-5. If user seems overwhelmed, simplify and focus on ONE action
+3. **ALWAYS relay the sub-agent's response back to the user** - When a sub-agent returns a response, pass that message to the user
+4. Summarize key learnings at end of important sessions
+5. Be conversational, not robotic
+6. If user seems overwhelmed, simplify and focus on ONE action
+7. **Never return an empty response** - always say something helpful
 
 ## SESSION MANAGEMENT
 
@@ -357,7 +359,7 @@ Let's make sustainability achievable, one step at a time! 🌍
 # APP FACTORY
 # ============================================================================
 def create_climateguard_app(
-    model_name: str = "gemini-2.5-flash-lite",
+    model_name: str = "gemini-2.0-flash",
     use_compaction: bool = True,
     use_database: bool = False,
     db_url: str = "sqlite:///climateguard.db"
@@ -400,10 +402,12 @@ def create_climateguard_app(
         session_service = InMemorySessionService()
     
     # Create runner
+    # Note: memory_service must be BaseMemoryService or None
+    # ClimateGuardMemoryService is used separately for profile/footprint tracking
     runner = Runner(
         app=app,
         session_service=session_service,
-        memory_service=get_memory_service(),
+        # memory_service=get_memory_service(),  # Custom service not compatible with Runner
     )
     
     return app, runner, session_service
