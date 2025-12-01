@@ -181,7 +181,7 @@ class SupervisorAgent:
     - Community Agent: Social features
     """
     
-    def __init__(self, model_name: str = "gemini-2.0-flash"):
+    def __init__(self, model_name: str = "gemini-2.5-flash-lite"):
         """
         Initialize the Supervisor Agent with all sub-agents.
         
@@ -219,7 +219,7 @@ class SupervisorAgent:
 # AGENT FACTORY
 # ============================================================================
 def create_supervisor_agent(
-    model_name: str = "gemini-2.0-flash",
+    model_name: str = "gemini-2.5-flash-lite",
     profile_agent: LlmAgent = None,
     calculator_agent: LlmAgent = None,
     planner_agent: LlmAgent = None,
@@ -357,7 +357,7 @@ Let's make sustainability achievable, one step at a time! 🌍
 # APP FACTORY
 # ============================================================================
 def create_climateguard_app(
-    model_name: str = "gemini-2.0-flash",
+    model_name: str = "gemini-2.5-flash-lite",
     use_compaction: bool = True,
     use_database: bool = False,
     db_url: str = "sqlite:///climateguard.db"

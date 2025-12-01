@@ -335,7 +335,7 @@ class CommunityAgent:
     Connects users with sustainability communities and challenges.
     """
     
-    def __init__(self, model_name: str = "gemini-2.0-flash"):
+    def __init__(self, model_name: str = "gemini-2.5-flash-lite"):
         """
         Initialize the Community Agent.
         
@@ -358,7 +358,7 @@ class CommunityAgent:
 # ============================================================================
 # AGENT FACTORY
 # ============================================================================
-def create_community_agent(model_name: str = "gemini-2.0-flash") -> LlmAgent:
+def create_community_agent(model_name: str = "gemini-2.5-flash-lite") -> LlmAgent:
     """
     Create the Community Agent for social features.
     

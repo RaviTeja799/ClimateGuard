@@ -310,7 +310,7 @@ def record_activity_and_emissions(
 # ============================================================================
 # SUB-AGENT: MATH CALCULATOR
 # ============================================================================
-def create_math_agent(model_name: str = "gemini-2.0-flash") -> LlmAgent:
+def create_math_agent(model_name: str = "gemini-2.5-flash-lite") -> LlmAgent:
     """
     Create a sub-agent for precise mathematical calculations.
     
@@ -340,7 +340,7 @@ class CalculatorAgent:
     Computes carbon footprints using parallel API calls.
     """
     
-    def __init__(self, model_name: str = "gemini-2.0-flash"):
+    def __init__(self, model_name: str = "gemini-2.5-flash-lite"):
         """
         Initialize the Calculator Agent.
         
@@ -363,7 +363,7 @@ class CalculatorAgent:
 # ============================================================================
 # AGENT FACTORY
 # ============================================================================
-def create_calculator_agent(model_name: str = "gemini-2.0-flash") -> LlmAgent:
+def create_calculator_agent(model_name: str = "gemini-2.5-flash-lite") -> LlmAgent:
     """
     Create the Calculator Agent for carbon footprint computation.
     

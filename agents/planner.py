@@ -493,7 +493,7 @@ class PlannerAgent:
     Generates and tracks weekly carbon reduction plans.
     """
     
-    def __init__(self, model_name: str = "gemini-2.0-flash"):
+    def __init__(self, model_name: str = "gemini-2.5-flash-lite"):
         """
         Initialize the Planner Agent.
         
@@ -516,7 +516,7 @@ class PlannerAgent:
 # ============================================================================
 # AGENT FACTORY
 # ============================================================================
-def create_planner_agent(model_name: str = "gemini-2.0-flash") -> LlmAgent:
+def create_planner_agent(model_name: str = "gemini-2.5-flash-lite") -> LlmAgent:
     """
     Create the Planner Agent for weekly plan generation.
     
