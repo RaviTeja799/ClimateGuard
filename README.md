@@ -34,18 +34,18 @@ ClimateGuard is a **multi-agent AI system** built with Google's Agent Developmen
 ### Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    Supervisor Agent                          │
-│              (Orchestrates all interactions)                 │
+┌────────────────────────────────────────────────────────────┐
+│                    Supervisor Agent                        │
+│              (Orchestrates all interactions)               │
 ├──────────┬──────────┬──────────┬──────────┬────────────────┤
 │ Profile  │Calculator│ Planner  │Community │ Impact Tracker │
 │  Agent   │  Agent   │  Agent   │  Agent   │   (Plugin)     │
 ├──────────┴──────────┴──────────┴──────────┴────────────────┤
-│                      Memory Service                          │
-│            (Sessions + Long-term Memory + Compaction)        │
+│                      Memory Service                        │
+│            (Sessions + Long-term Memory + Compaction)      │
 ├────────────────────────────────────────────────────────────┤
-│                     Carbon Tools Layer                       │
-│      (Climatiq API | Electricity Maps | Transport Calc)     │
+│                     Carbon Tools Layer                     │
+│      (Climatiq API | Electricity Maps | Transport Calc)    │
 └────────────────────────────────────────────────────────────┘
 ```
 
@@ -55,15 +55,14 @@ ClimateGuard is a **multi-agent AI system** built with Google's Agent Developmen
 
 | Concept | Implementation | Points |
 |---------|----------------|--------|
-| ✅ Multi-Agent System | 5 specialized agents with supervisor orchestration | Core |
-| ✅ Custom Tools | Carbon calculation, community search, offset finder | 15 |
-| ✅ Memory Service | InMemoryMemoryService with user profile persistence | 15 |
-| ✅ Session Management | Persistent sessions with DatabaseSessionService | 15 |
-| ✅ Context Compaction | EventsCompactionConfig for long conversations | 15 |
-| ✅ Long-Running Operations | Weekly planner with approval workflow | 15 |
-| ✅ Observability Plugin | CO2 metrics tracking across all tool calls | 10 |
-| ✅ A2A Protocol | RemoteA2aAgent for community federation | 10 |
-| 🎁 Cloud Deployment | Cloud Run with Docker containerization | Bonus |
+| ✅ Multi-Agent System | 5 specialized agents with supervisor orchestration |
+| ✅ Custom Tools | Carbon calculation, community search, offset finder | 
+| ✅ Memory Service | InMemoryMemoryService with user profile persistence | 
+| ✅ Session Management | Persistent sessions with DatabaseSessionService |
+| ✅ Context Compaction | EventsCompactionConfig for long conversations |
+| ✅ Long-Running Operations | Weekly planner with approval workflow | 
+| ✅ Observability Plugin | CO2 metrics tracking across all tool calls | 
+| ✅ A2A Protocol | RemoteA2aAgent for community federation | 
 
 **Target Score: 95+ points**
 
